@@ -18,4 +18,9 @@ COPY entrypoint.sh /usr/local/bin
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
+# SSL
+
+RUN mkdir -p /var/www/letsencrypt
+RUN mkdir -p /etc/letsencrypt
+
 CMD ["nginx", "-g", "daemon off;"]
