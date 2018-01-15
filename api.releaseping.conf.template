@@ -1,4 +1,4 @@
-upstream api_upstream{
+upstream release_ping_upstream{
     server ${RELEASE_PING_APP_ENV_DOCKERCLOUD_SERVICE_HOSTNAME}:${RELEASE_PING_APP_ENV_PORT};
 }
 
@@ -18,7 +18,7 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_cache_bypass $http_upgrade;
-        proxy_pass http://api_upstream;
+        proxy_pass http://release_ping_upstream;
     }
 }
 
