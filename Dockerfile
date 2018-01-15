@@ -13,7 +13,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 RUN mkdir -p /etc/nginx/sites-enabled/
 RUN mkdir -p /etc/nginx/templates/
-COPY api.releaseping.conf.template /etc/nginx/templates/
+COPY *.template /etc/nginx/templates/
 COPY entrypoint.sh /usr/local/bin
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
