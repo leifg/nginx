@@ -6,7 +6,7 @@ do
   conf=${base%.*}
 
   echo "Writing conf: ${conf}"
-  envsubst '${RELEASE_PING_APP_ENV_DOCKERCLOUD_SERVICE_HOSTNAME},${HN_VANITY_APP_ENV_PORT},${HN_VANITY_APP_ENV_DOCKERCLOUD_SERVICE_HOSTNAME},${RELEASE_PING_APP_ENV_PORT}' < ${f} > /etc/nginx/sites-enabled/${conf}
+  envsubst '${RELEASE_PING_APP_ENV_DOCKERCLOUD_SERVICE_HOSTNAME},${HN_VANITY_APP_ENV_PORT},${HN_VANITY_APP_ENV_DOCKERCLOUD_SERVICE_HOSTNAME},${TIME_TRACKING_APP_ENV_DOCKERCLOUD_SERVICE_HOSTNAME},${RELEASE_PING_APP_ENV_PORT},${TIME_TRACKING_APP_ENV_PORT}' < ${f} > /etc/nginx/sites-enabled/${conf}
   cat /etc/nginx/sites-enabled/${conf}
 done
 
